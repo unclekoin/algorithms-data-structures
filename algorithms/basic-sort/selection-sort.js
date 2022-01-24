@@ -4,12 +4,14 @@ const selectionSort = (array) => {
     for (let j = i + 1; j < array.length; j++) {
       if (array[min] > array[j]) min = j;
     }
-    temp = array[i];
-    array[i] = array[min];
-    array[min] = temp;
+    if (i !== min) {
+      temp = array[i];
+      array[i] = array[min];
+      array[min] = temp;
+    }
   }
-  
+
   return array;
-}
+};
 
 console.log(selectionSort([4, 2, 6, 5, 1, 3]));
